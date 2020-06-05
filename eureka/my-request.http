@@ -1,0 +1,33 @@
+### 测试 eureka-cline ###
+
+http://localhost:30001/sayHi
+
+###
+
+POST http://localhost:30001/sayHi
+Content-Type: application/json
+
+{
+  "name": "奥特曼",
+  "port": "8888"
+}
+
+### 测试 eureka-cline END ###
+
+
+### 测试 eureka-consumer ###
+
+http://localhost:40001/hello
+
+###
+
+POST http://localhost:40001/hello
+Content-Type: application/json
+
+{
+  "name": "奥特曼",
+  "port": "8888"
+}
+
+### 测试 eureka-consumer END ###
+
