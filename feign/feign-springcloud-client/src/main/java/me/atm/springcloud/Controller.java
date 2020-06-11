@@ -40,4 +40,9 @@ public class Controller implements IService {
         return port;
     }
 
+    @Override
+    public String error() {
+        throw new RuntimeException("black sheep");
+    }
+
 }

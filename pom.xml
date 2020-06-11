@@ -12,7 +12,7 @@
         <module>ribbon/ribbon-consumer</module>
         <module>feign/feign-consumer</module>
         <module>hystrix/hystrix-fallback</module>
-        <module>feign/feign-interface</module>
+        <module>feign/feign-springcloud-interface</module>
         <module>feign/feign-springcloud-client</module>
         <module>feign/feign-springcloud-consumer</module>
     </modules>

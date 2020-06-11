@@ -20,5 +20,8 @@ public interface IService {
     Friend sayHiPost(@RequestBody Friend friend);
 
     @GetMapping("/retry")
-    public String retry(@RequestParam(name = "timeout") int timeout);
+    String retry(@RequestParam(name = "timeout") int timeout);
+
+    @GetMapping("/error")
+    String error();
 }
