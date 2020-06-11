@@ -1,5 +1,7 @@
 package me.atm.springcloud;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,5 +23,21 @@ public class Controller {
     @GetMapping("/timeout")
     public String timeout(Integer t){
         return myService.retry(t);
+    }
+
+
+    @HystrixCommand(
+            fallbackMethod = "timeout2Fallback",
+            commandProperties = {
+                    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000")
+            }
+    )
+    @GetMapping("/timeout2")
+    public String timeout2(Integer t){
+        return myService.retry(t);
+    }
+
+    public String timeout2Fallback(Integer t){
+        return "timeout2Fallback";
     }
 }
