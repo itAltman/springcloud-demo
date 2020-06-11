@@ -26,6 +26,7 @@ public class Controller {
     }
 
 
+    // 这里需要确认全局超时时间是否有配置
     @HystrixCommand(
             fallbackMethod = "timeout2Fallback",
             commandProperties = {
